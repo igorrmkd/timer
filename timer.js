@@ -19,7 +19,7 @@ class Timer {
         }
 
         this.tick();  // call it once, just to start ticking right away
-        this.interval = setInterval(this.tick, 1000);
+        this.interval = setInterval(this.tick, 50);// tick every 50ms
     };
 
     pause = () => {
@@ -34,7 +34,7 @@ class Timer {
                 this.onComplete();
             }
         } else {
-            this.timeRemaining = this.timeRemaining - 1;
+            this.timeRemaining = this.timeRemaining - .05; // sutract 50ms
             if (this.onTick) { // detect the ticks
                 this.onTick();
             }
