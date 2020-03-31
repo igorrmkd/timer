@@ -46,7 +46,7 @@ class Timer {
     }
 
     set timeRemaining(time) {
-        this.durationInput.value = time;
+        this.durationInput.value = time.toFixed(2);//round the time to just 2 decimals
     }
 
 };
