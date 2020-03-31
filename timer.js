@@ -15,7 +15,7 @@ class Timer {
 
     start = () => {
         if (this.onStart) {
-            this.onStart();
+            this.onStart(this.timeRemaining);
         }
 
         this.tick();  // call it once, just to start ticking right away
@@ -36,7 +36,7 @@ class Timer {
         } else {
             this.timeRemaining = this.timeRemaining - .05; // sutract 50ms
             if (this.onTick) { // detect the ticks
-                this.onTick();
+                this.onTick(this.timeRemaining);
             }
         }
     };
@@ -46,7 +46,7 @@ class Timer {
     }
 
     set timeRemaining(time) {
-        this.durationInput.value = time.toFixed(2);//round the time to just 2 decimals
+        this.durationInput.value = time.toFixed(2);//round the timer tick time to just 2 decimals
     }
 
 };
